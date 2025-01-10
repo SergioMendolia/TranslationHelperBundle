@@ -1,0 +1,8 @@
+parameters:
+    tipsOfTheDay: false
+    level: max
+    paths:
+        - src/
+        - tests/
+    excludePaths:
+        - tests/kernel/*

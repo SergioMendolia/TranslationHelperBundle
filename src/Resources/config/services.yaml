@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  SergioMendolia\TranslationHelperBundle\:
+    resource: '../../'
+    exclude:
+      - '../../DependencyInjection/'
+      - '../../Tests/'
+
+  SergioMendolia\TranslationHelperBundle\Command\:
+    resource: '../../Command/'
+    tags: ['console.command']

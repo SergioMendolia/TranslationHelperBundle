@@ -1,0 +1,86 @@
+{
+    "name": "sergiomendolia/translation-helper-bundle",
+    "description": "Useful Commands to help translate your symfony app",
+    "type": "symfony-bundle",
+    "require": {
+        "php": ">=8.1",
+        "symfony/framework-bundle": "^7.0|^6.0",
+        "symfony/translation": "^7.0|^6.0",
+        "symfony/http-kernel": "^7.0|^6.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "symfony/console": "^7.0|^6.0",
+        "friendsofphp/php-cs-fixer": "dev-master",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-symfony": "^2.0",
+        "phpunit/phpunit": "^10.0|^11.5",
+        "rector/rector": "^2.0",
+        "symfony/phpunit-bridge": "^7.0",
+        "symfony/runtime": "^6.4|^7.2",
+        "symfony/yaml": "^6.4|^7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SergioMendolia\\TranslationHelperBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SergioMendolia\\TranslationHelperBundle\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sergio Mendolia",
+            "email": "sergio.mendolia@liip.ch"
+        }
+    ],
+    "scripts": {
+        "phpstan": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/phpstan analyse --memory-limit=-1"
+        ],
+        "test-phpcs": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/php-cs-fixer fix --dry-run --verbose -vv"
+        ],
+        "phpcs": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/php-cs-fixer fi --verbose -vv"
+        ],
+        "test-rector": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/rector --dry-run"
+        ],
+        "rector": [
+            "Composer\\Config::disableProcessTimeout",
+            "./vendor/bin/rector"
+        ],
+        "phpunit": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -d memory_limit=-1 ./vendor/bin/phpunit --colors=always"
+        ],
+        "phpunit-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "env XDEBUG_MODE=coverage php -d memory_limit=-1 ./vendor/bin/phpunit --colors=always --coverage-html=tests/coverage"
+        ],
+        "lint": [
+            "@rector",
+            "@phpcs",
+            "@phpstan"
+        ],
+        "test": [
+            "@test-phpcs",
+            "@phpstan",
+            "@test-rector",
+            "@phpunit"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}
