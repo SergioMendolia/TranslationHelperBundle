@@ -3,7 +3,6 @@
 namespace SergioMendolia\TranslationHelperBundle\Tests;
 
 use SergioMendolia\TranslationHelperBundle\TranslationHelperBundle;
-
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -49,15 +48,15 @@ class TestKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        //$this->settings['configs'][] = __DIR__.'/config/packages/doctrine.yaml';
-        //$this->settings['configs'][] = __DIR__.'/config/packages/framework.yaml';
-        //$this->settings['configs'][] = __DIR__.'/config/services.yaml';
-        //if (false === in_array(self::CONFIG_KEY, array_keys($this->settings['configs']))) {
+        // $this->settings['configs'][] = __DIR__.'/config/packages/doctrine.yaml';
+        // $this->settings['configs'][] = __DIR__.'/config/packages/framework.yaml';
+        // $this->settings['configs'][] = __DIR__.'/config/services.yaml';
+        // if (false === in_array(self::CONFIG_KEY, array_keys($this->settings['configs']))) {
         //    $this->settings['configs'][self::CONFIG_KEY] = __DIR__.'/config/packages/biblioteca_typesense.yaml';
-        //}
-        //foreach ($this->settings['configs'] as $config) {
+        // }
+        // foreach ($this->settings['configs'] as $config) {
         //    $loader->load($config);
-        //}
+        // }
     }
 
     public function getCacheDir(): string

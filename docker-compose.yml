@@ -1,0 +1,17 @@
+services:
+  php:
+    build: .
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    stdin_open: true
+    tty: true
+    environment:
+      - PHP_IDE_CONFIG=serverName=translationhelperbundle
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    networks:
+      - default
+
+volumes:
+  searchdata:

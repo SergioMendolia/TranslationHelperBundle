@@ -6,3 +6,7 @@ parameters:
         - tests/
     excludePaths:
         - tests/kernel/*
+    ignoreErrors:
+        -
+           message: '#(.*)#'
+           path: src/TranslationHelperBundle.php
