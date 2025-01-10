@@ -190,7 +190,7 @@ class TranslationRetrieveFromProfilerCommand extends Command
     }
 
     /**
-     * @param array<mixed, mixed> $array
+     * @param array<mixed, mixed>|array<Data> $array
      *
      * @return array<mixed, mixed>
      */
