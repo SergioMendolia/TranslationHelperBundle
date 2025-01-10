@@ -60,7 +60,7 @@
         ],
         "phpunit": [
             "Composer\\Config::disableProcessTimeout",
-            "php -d memory_limit=-1 ./vendor/bin/phpunit --colors=always"
+            "env XDEBUG_MODE=coverage php -d memory_limit=-1 ./vendor/bin/phpunit --colors=always"
         ],
         "phpunit-coverage": [
             "Composer\\Config::disableProcessTimeout",
